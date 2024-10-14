@@ -9,7 +9,7 @@ queue_rules:
       {{ title }} (#{{number}})
       {{ body }}
       {% for commit in commits %}
-      {{ commit }}
+       {{ commit }}
       {% endfor %}
       {% for co_author in co_authors | unique %}
       Co-Authored-By: {{ co_author.name }} <{{ co_author.email }}>
@@ -19,7 +19,7 @@ pull_request_rules:
   - name: Automatic squash merge on approval
     conditions:
         - and:
-          - "#changes-requested-reviews-by=1"
+          - "check-success=dummy"
     actions:
       comment:
         message: Thank you for contributing! Your pull request is now going on the merge train (choo choo! Do not click update from main anymore, and be sure to [allow changes to be pushed to your fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork)).
