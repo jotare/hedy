@@ -10,7 +10,9 @@ queue_rules:
       {% for co_author in co_authors | unique %}
       Co-Authored-By: {{ co_author.name }} <{{ co_author.email }}>
       {% endfor %}
-      but probably this will be empty because I can't generate co-authors myself
+      but probably this will be empty because I can't generate co-authors
+      myself.
+      At least, the author is {{ author }}
 
 pull_request_rules:
   - name: Automatic squash merge on approval
