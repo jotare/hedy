@@ -3,7 +3,7 @@
 queue_rules:
   - name: default_queue
     conditions:
-        - "check-success=build"
+      - label != bug
     merge_method: squash
     commit_message_template: |-
       {{ title }} (#{{number}})
